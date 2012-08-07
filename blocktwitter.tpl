@@ -2,12 +2,13 @@
 <div style='margin-left: auto; margin-right: auto;width: {$config.PS_BT_WIDTH}px;'>
 	<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 	<script>
+	var tw = {$config.PS_BT_WIDTH} - 10;
 	new TWTR.Widget({
 	  version: 2,
 	  type: 'profile',
 	  rpp: 10,
 	  interval: 30000,
-	  width: {$config.PS_BT_WIDTH},
+	  width: tw,
 	  height: {$config.PS_BT_HEIGHT},
 	  theme: {
 		shell: {

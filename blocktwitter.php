@@ -172,74 +172,110 @@ class BlockTwitter extends Module{
 
 		$this->_html .= '
 		<fieldset>
-			<form method="post" action="'.Tools::safeOutput($_SERVER['REQUEST_URI']).'">
-				<label>Twitter Username</label>
-				<div class="margin-form">
-					<input type="text" name="PS_BT_USERNAME" id="PS_BT_USERNAME" value="'.(( isset($val['PS_BT_USERNAME'])) ? $val['PS_BT_USERNAME'] : '').'" />
-					<sup> *</sup>
-				</div>
-				<label>Block width</label>
-				<div class="margin-form">
-					<input type="text" name="PS_BT_WIDTH" id="PS_BT_WIDTH" value="'.(( isset($val['PS_BT_WIDTH'])) ? $val['PS_BT_WIDTH'] : '').'" />
-					<sup> *</sup>
-				</div>
-				<label>Block Height</label>
-				<div class="margin-form">
-					<input type="text" name="PS_BT_HEIGHT" id="PS_BT_HEIGHT" value="'.(( isset($val['PS_BT_HEIGHT'])) ? $val['PS_BT_HEIGHT'] : '').'" />
-					<sup> *</sup>
-				</div>
-
-				<label>Shell Background</label>
-				<div class="margin-form">
-					<div style="float:left">
-						<input type="text" name="PS_BT_SHELL_BG" id="PS_BT_SHELL_BG" value="'.(( isset($val['PS_BT_SHELL_BG'])) ? $val['PS_BT_SHELL_BG'] : '').'" />
+			<div style="width : 50%; float: left;">
+				<form method="post" action="'.Tools::safeOutput($_SERVER['REQUEST_URI']).'">
+					<label>Twitter Username</label>
+					<div class="margin-form">
+						<input type="text" name="PS_BT_USERNAME" id="PS_BT_USERNAME" value="'.(( isset($val['PS_BT_USERNAME'])) ? $val['PS_BT_USERNAME'] : '').'" />
 						<sup> *</sup>
 					</div>
-					' . $this->colorpicker(array('divId' => 'csShellBG', 'fieldId' => 'PS_BT_SHELL_BG', 'fieldVal' => $val['PS_BT_SHELL_BG'] )) . '
-				</div>
-
-				<label>Shell Color</label>
-				<div class="margin-form">
-					<div style="float:left">
-						<input type="text" name="PS_BT_SHELL_COLOR" id="PS_BT_SHELL_COLOR" value="'.(( isset($val['PS_BT_SHELL_COLOR'])) ? $val['PS_BT_SHELL_COLOR'] : '').'" />
+					<label>Block width</label>
+					<div class="margin-form">
+						<input type="text" name="PS_BT_WIDTH" id="PS_BT_WIDTH" value="'.(( isset($val['PS_BT_WIDTH'])) ? $val['PS_BT_WIDTH'] : '').'" />
 						<sup> *</sup>
 					</div>
-					' . $this->colorpicker(array('divId' => 'csShellColor', 'fieldId' => 'PS_BT_SHELL_COLOR', 'fieldVal' => $val['PS_BT_SHELL_COLOR'] )) . '
-				</div>
-
-				<label>Tweet Background</label>
-				<div class="margin-form">
-					<div style="float:left">
-						<input type="text" name="PS_BT_TWEET_BG" id="PS_BT_TWEET_BG" value="'.(( isset($val['PS_BT_TWEET_BG'])) ? $val['PS_BT_TWEET_BG'] : '').'" />
+					<label>Block Height</label>
+					<div class="margin-form">
+						<input type="text" name="PS_BT_HEIGHT" id="PS_BT_HEIGHT" value="'.(( isset($val['PS_BT_HEIGHT'])) ? $val['PS_BT_HEIGHT'] : '').'" />
 						<sup> *</sup>
 					</div>
-					' . $this->colorpicker(array('divId' => 'csTweetBg', 'fieldId' => 'PS_BT_TWEET_BG', 'fieldVal' => $val['PS_BT_TWEET_BG'] )) . '
-				</div>
 
-				<label>Tweet Color</label>
-				<div class="margin-form">
-					<div style="float:left">
-						<input type="text" name="PS_BT_TWEET_COLOR" id="PS_BT_TWEET_COLOR" value="'.(( isset($val['PS_BT_TWEET_COLOR'])) ? $val['PS_BT_TWEET_COLOR'] : '').'" />
-						<sup> *</sup>
+					<label>Shell Background</label>
+					<div class="margin-form">
+						<div style="float:left">
+							<input type="text" name="PS_BT_SHELL_BG" id="PS_BT_SHELL_BG" value="'.(( isset($val['PS_BT_SHELL_BG'])) ? $val['PS_BT_SHELL_BG'] : '').'" />
+							<sup> *</sup>
+						</div>
+						' . $this->colorpicker(array('divId' => 'csShellBG', 'fieldId' => 'PS_BT_SHELL_BG', 'fieldVal' => $val['PS_BT_SHELL_BG'] )) . '
 					</div>
-					' . $this->colorpicker(array('divId' => 'csTweetColor', 'fieldId' => 'PS_BT_TWEET_COLOR', 'fieldVal' => $val['PS_BT_TWEET_COLOR'] )) . '
-				</div>
 
-				<label>Tweet Link</label>
-				<div class="margin-form">
-					<div style="float:left">
-						<input type="text" name="PS_BT_TWEET_LINK" id="PS_BT_TWEET_LINK" value="'.(( isset($val['PS_BT_TWEET_LINK'])) ? $val['PS_BT_TWEET_LINK'] : '').'" />
-						<sup> *</sup>
+					<label>Shell Color</label>
+					<div class="margin-form">
+						<div style="float:left">
+							<input type="text" name="PS_BT_SHELL_COLOR" id="PS_BT_SHELL_COLOR" value="'.(( isset($val['PS_BT_SHELL_COLOR'])) ? $val['PS_BT_SHELL_COLOR'] : '').'" />
+							<sup> *</sup>
+						</div>
+						' . $this->colorpicker(array('divId' => 'csShellColor', 'fieldId' => 'PS_BT_SHELL_COLOR', 'fieldVal' => $val['PS_BT_SHELL_COLOR'] )) . '
 					</div>
-					' . $this->colorpicker(array('divId' => 'csTweeLink', 'fieldId' => 'PS_BT_TWEET_LINK', 'fieldVal' => $val['PS_BT_TWEET_LINK'] )) . '
-				</div>
 
-				<div class="margin-form">
-					<input type="hidden" name="act" id="act" value="configure" />
-					<input type="submit" class="button" name="submitSaveConfig" value="'.$this->l('Save Configuration').'" />
+					<label>Tweet Background</label>
+					<div class="margin-form">
+						<div style="float:left">
+							<input type="text" name="PS_BT_TWEET_BG" id="PS_BT_TWEET_BG" value="'.(( isset($val['PS_BT_TWEET_BG'])) ? $val['PS_BT_TWEET_BG'] : '').'" />
+							<sup> *</sup>
+						</div>
+						' . $this->colorpicker(array('divId' => 'csTweetBg', 'fieldId' => 'PS_BT_TWEET_BG', 'fieldVal' => $val['PS_BT_TWEET_BG'] )) . '
+					</div>
+
+					<label>Tweet Color</label>
+					<div class="margin-form">
+						<div style="float:left">
+							<input type="text" name="PS_BT_TWEET_COLOR" id="PS_BT_TWEET_COLOR" value="'.(( isset($val['PS_BT_TWEET_COLOR'])) ? $val['PS_BT_TWEET_COLOR'] : '').'" />
+							<sup> *</sup>
+						</div>
+						' . $this->colorpicker(array('divId' => 'csTweetColor', 'fieldId' => 'PS_BT_TWEET_COLOR', 'fieldVal' => $val['PS_BT_TWEET_COLOR'] )) . '
+					</div>
+
+					<label>Tweet Link</label>
+					<div class="margin-form">
+						<div style="float:left">
+							<input type="text" name="PS_BT_TWEET_LINK" id="PS_BT_TWEET_LINK" value="'.(( isset($val['PS_BT_TWEET_LINK'])) ? $val['PS_BT_TWEET_LINK'] : '').'" />
+							<sup> *</sup>
+						</div>
+						' . $this->colorpicker(array('divId' => 'csTweeLink', 'fieldId' => 'PS_BT_TWEET_LINK', 'fieldVal' => $val['PS_BT_TWEET_LINK'] )) . '
+					</div>
+
+					<div class="margin-form">
+						<input type="hidden" name="act" id="act" value="configure" />
+						<input type="submit" class="button" name="submitSaveConfig" value="'.$this->l('Save Configuration').'" />
+					</div>
+				</form>
+			</div>
+			<div>
+				<div style=\'margin-left: auto; margin-right: auto;width: ' . $val['PS_BT_WIDTH'] . 'px;\'>
+					<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+					<script>
+					var tw = ' . $val['PS_BT_WIDTH'] . ' - 10;
+					new TWTR.Widget({
+					  version: 2,
+					  type: \'profile\',
+					  rpp: 10,
+					  interval: 30000,
+					  width: tw,
+					  height: ' . $val['PS_BT_HEIGHT'] . ',
+					  theme: {
+						shell: {
+						  background: \'' . $val['PS_BT_SHELL_BG'] . '\',
+						  color: \'' . $val['PS_BT_SHELL_COLOR'] . '\'
+						},
+						tweets: {
+						  background: \' ' . $val['PS_BT_TWEET_BG'] .'\',
+						  color: \'' . $val['PS_BT_TWEET_COLOR'] . '\',
+						  links: \'' . $val['PS_BT_TWEET_LINK'] . '\'
+						}
+					  },
+					  features: {
+						scrollbar: false,
+						loop: false,
+						live: true,
+						behavior: \'default\'
+					  }
+					}).render().setUser(\' ' . $val['PS_BT_USERNAME'] .'\').start();
+					</script>
 				</div>
-			</form>
-		</fieldset>';
+			</div>
+		</fieldset>
+		';
 
 	}
 
